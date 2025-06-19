@@ -1,8 +1,8 @@
-package controller;
+package com.sis.travelapi.controller;
 
 
-import model.Place;
-import service.PlaceService;
+import com.sis.travelapi.model.Place;
+import com.sis.travelapi.service.PlaceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,18 +15,13 @@ import java.util.List;
  * Controller để quản lý các yêu cầu HTTP liên quan đến Địa điểm (Place).
  */
 @RestController
-@RequestMapping("/api/v1/places")
-// Cho phép yêu cầu từ mọi nguồn (cần thiết cho việc phát triển với Flutter)
+@RequestMapping("/api/places")
 @CrossOrigin(origins = "*")
 public class PlaceController {
 
     @Autowired
     private PlaceService placeService;
 
-    /**
-     * API endpoint để lấy tất cả các địa điểm.
-     * @return một danh sách các địa điểm và mã trạng thái HTTP 200 (OK).
-     */
     @GetMapping
     public ResponseEntity<List<Place>> getAllPlace() {
         List<Place> places = placeService.getAllPlaces();

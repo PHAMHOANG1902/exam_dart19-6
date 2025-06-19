@@ -1,7 +1,7 @@
-package service;
+package com.sis.travelapi.service;
 
-import model.Place;
-import repository.PlaceRepository;
+import com.sis.travelapi.model.Place;
+import com.sis.travelapi.repository.PlaceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
